@@ -1,0 +1,28 @@
+::root {
+    --fuenteHeading: 'PT Sans', sans-serif;
+    --fuenteParrafos: 'Open Sans', sans-serif;
+
+    --primario: #784D3C;
+    --blanco: #ffffff;
+    --negro: #000000;
+}
+
+html {
+    /* Para hacer que el border, padding no afecte el ancho de nuestros elementos */
+    box-sizing: border-box;
+    font-size: 62.5%; /* 1 rem = 10px */
+}
+*, *::before, *::after {
+    /* Esto hereda del elemento padre, tiene la ventaja si se utiliza en otro selector va a heredar de ese otro*/
+    box-sizing: inherit;
+}
+body {
+    font-family: var(--fuenteParrafos);
+    font-size: 1.6rem;
+    /* En los blogs siempre hace buen sentido tener un interlineado mucho mas grandes para poder leer mejor el contenido*/
+    line-height: 2;
+}
+
+/** Globales  **/
+
+/* Este proyecto utiliza BEM pero estara utilizando mas utilidades que proyectos anteriores */
