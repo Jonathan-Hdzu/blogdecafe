@@ -1,7 +1,6 @@
-::root {
+:root {
     --fuenteHeading: 'PT Sans', sans-serif;
     --fuenteParrafos: 'Open Sans', sans-serif;
-
     --primario: #784D3C;
     --blanco: #ffffff;
     --negro: #000000;
@@ -24,5 +23,105 @@ body {
 }
 
 /** Globales  **/
-
+/* Lo que se va a utilizar mas de una vez se coloca como globales */
 /* Este proyecto utiliza BEM pero estara utilizando mas utilidades que proyectos anteriores */
+.contenedor {
+    max-width: 120rem;
+    width: 90%;
+    margin: 0 auto; /*Para centrar el contenido horizontalmente dado que no tendremos un display flex para centrarlo. Se centrara por si mismo con esta propiedad */
+}
+* {
+    text-decoration: none;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--fuenteHeading);
+}
+
+h1 {
+    font-size: 4.8rem;
+}
+h2 {
+    font-size: 4rem;
+}
+h3 {
+    font-size: 3.2rem;
+}
+h4 {
+    font-size: 2.8rem;
+}
+
+img {
+    max-width: 100%;
+}
+
+/** Utilidades **/ 
+
+/* El navegador normalmente agrega algunos margenes y padding por default, entonces con esta utilidad los eliminamos para modificarlos */
+.no-margin {
+    margin: 0;
+}
+.no-padding {
+    padding: 0;
+}
+/* Se pueden hacer para distintas posiciones pero en este proyecto solo necesitamos centrar */
+.centrar-texto {
+    text-align: center;
+}
+
+/** Header **/ 
+.header {
+    background-image: url(../img/banner.jpg);
+    height: 45rem;
+    /* La imagen de fondo se ajusta automáticamente para cubrir completamente el área del elemento, sin distorsionarla y manteniendo la relación de aspecto original. */
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* Por que doble center? una imagen se tiene que centrar vertical y horizontalmente, el primer valor permite adaptarlo horizontalmente. Cuando se tiene un cover normalmente se deja como center en ambas direcciones. Toma 3 valores, right, left, center. En el caso de center siempre mostrara la parte central de la imagen aunque la imagen sea editada sin cover con un tamaño inferior. Tambien se puede usar valores pero son un poco menos exactos o no son tan utiles*/
+    background-position: center center;
+}
+.header__texto {
+    text-align: center;
+    color: var(--blanco);
+    margin-top: 4rem;
+
+}
+ @media (min-width: 768px) {
+    .header__texto {
+        margin-top: 8rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .barra {
+    /* Acomodando elementos dentro de un mismo bloque es mas facil usar flexbox */
+    display: flex;
+    /* Para hacer que la barra de navegacion tenga los elementos separados, pero quedan disparejos de altura */
+    justify-content: space-between;
+    /* Para ello usamos align para alinear verticalmente */
+    align-items: center;
+    }
+}
+.logo {
+    color: var(--blanco);
+}
+.logo__nombre {
+    font-weight: 400;
+}
+.logo__bold {
+    font-weight: 700;
+}
+
+@media (min-width: 768px) {
+    .navegacion {
+        /* Los elementos se alinean de izquierda a derecha */
+        display: flex;
+        gap: 2rem;
+    }
+}
+.navegacion__enlace {
+    /* Para que los elementos esten uno debajo del otro  */
+    display: block;
+    text-align: center;
+    font-size: 1.8rem;
+    color: var(--blanco);
+}
