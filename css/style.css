@@ -4,6 +4,7 @@
     --primario: #784D3C;
     --blanco: #ffffff;
     --negro: #000000;
+    --claro: #e1e1e1;
 }
 
 html {
@@ -124,4 +125,77 @@ img {
     text-align: center;
     font-size: 1.8rem;
     color: var(--blanco);
+}
+
+@media (min-width: 768px) {
+    .contenido-principal {
+        display: grid;
+        /* Como en nuestro diseño la seccion del main debe ser mas ancho ponemos que use 2 terceras partes y que el aside 1 */
+        grid-template-columns: 2fr 1fr;
+        column-gap: 4rem;
+    }
+}
+
+.entrada {
+    border-bottom: 1px solid var(--claro);
+    margin-bottom: 2rem;
+}
+/* En este caso como tenemos 3 article y queremos eliminar la linea y el margen */
+.entrada:last-of-type {
+    border: none;
+    margin-bottom: 0;
+}
+
+/* Este block es porque en dispositivos con pantalla menos ancha queremos que tome todo el espacio disponible */
+.boton {
+    display: block;
+    font-family: var(--fuenteHeading);
+    color: var(--blanco);
+    text-align: center;
+    /* 1 rem arriba y abajo y 3 rem en la izquierda y derecha */
+    padding: 1rem 3rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+@media (min-width: 768px) {
+    .boton {
+        /* los display inline son inmunes al width y al margin, por eso ponemos inline-block. En comparación con display: inline, la principal diferencia es que display: inline-block permite establecer un ancho y alto en el elemento.
+
+        Además, con display: inline-block, se respetan los márgenes/rellenos superior e inferior, pero con display: inlineno. En comparación con display: block, la principal diferencia es que display: inline-block no agrega un salto de línea después del elemento, por lo que el elemento puede ubicarse junto a otros elementos.*/
+        display: inline-block;
+
+    }
+}
+
+
+.boton--primario {
+    background-color: var(--negro);
+}
+/* el doble guion en BEM dice que esta heredando algo pero que algo va a cambiar */
+.boton--secundario {
+    background-color: var(--primario);
+}
+.cursos {
+    list-style: none;
+}
+.widget-curso{
+    border-bottom: 1px solid var(--claro);
+    margin-bottom: 2rem;
+}
+/* Esto es dinamico porque si se agrega otro curso mas no afectar esta propiedad */
+.widget-curso:last-of-type {
+    border: none;
+    margin-bottom: 0;
+}
+.widget-curso__label {
+    font-family: var(--fuenteHeading);
+    font-weight: bold;
+}
+.widget-curso__info {
+    font-weight: normal;
+}
+.widget-curso__label,
+.widget-curso__info {
+    font-size: 2rem;
 }
