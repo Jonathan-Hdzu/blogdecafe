@@ -26,9 +26,12 @@ body {
 /** Globales  **/
 /* Lo que se va a utilizar mas de una vez se coloca como globales */
 /* Este proyecto utiliza BEM pero estara utilizando mas utilidades que proyectos anteriores */
+/* Tiene un width de 90% porque si hacemos mas pequeño el display como de un telefono el texto se iria hasta los bordes si tiene un 100%, por esto es que decimos que tendra un 90% */
 .contenedor {
-    max-width: 120rem;
-    width: 90%;
+    /* max-width: 120rem;
+    width: 90%; */
+    /* Esta linea de aca resume las 2 anteriores, nos dice que aplicara el valor segun el tamaño, es decir, si nuestra pantalla esta completa tomara el valor inferior que en este caso es 120rem frente al 90%, pero si nuestra pantalla es como la de un telefono entonces el valor sera de 500px, lo compara cual es menor y lo aplica*/
+    width: min(90%, 120rem);
     margin: 0 auto; /*Para centrar el contenido horizontalmente dado que no tendremos un display flex para centrarlo. Se centrara por si mismo con esta propiedad */
 }
 * {
@@ -198,4 +201,11 @@ img {
 .widget-curso__label,
 .widget-curso__info {
     font-size: 2rem;
+}
+
+/** Footer **/
+.footer {
+    background-color: var(--negro);
+    padding: 1rem 0;
+   
 }
