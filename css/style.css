@@ -207,5 +207,28 @@ img {
 .footer {
     background-color: var(--negro);
     padding: 1rem 0;
-   
+}
+/** Sobre nosotros **/
+
+/**Lo haremos de ambas formas para conocer las opciones*/
+.sobre-nosotros {
+    padding-bottom: 4rem;
+}
+@media (min-width: 768px) {
+    /* .sobre-nosotros {
+        display: flex;
+        gap: 2rem;
+    }
+    .sobre-nosotros__imagen,
+    .sobre-nosotros__texto {
+        flex-basis: 50%;
+    } */
+    .sobre-nosotros {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+    }
+}
+.sobre-nosotros__imagen {
+    padding-top: 1rem;
 }
