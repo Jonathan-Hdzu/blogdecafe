@@ -222,13 +222,70 @@ img {
     .sobre-nosotros__imagen,
     .sobre-nosotros__texto {
         flex-basis: 50%;
-    } */
+    } 
+
+    Aca le estamos diciendo que por cada pixel que ele elemento de imagen crezca, el nosotros texto crecera 2, a esto se le conoce como factor de crecimiento. Esta sintaxis poco a poco va de salida gracias a grid pero es recomendable conocerlo
+
+    .sobre-nosotros__texto {
+        flex: 2;
+    }
+    .sobre-nosotros__imagen {
+        flex: 1;
+    }
+    .sobre-nosotros__texto {
+        flex: 0 0 calc(50% - 1rem);
+    }
+    .sobre-nosotros__imagen {
+       flex: 0 0 calc(50% - 1rem);
+    }
+    */
     .sobre-nosotros {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         column-gap: 2rem;
     }
+    /* Cuando tengamos que distribuir entre columnas, definir un ancho de elementos es mejor usar grid. Si solamente pondremos los elementos a la izquierda o derecha o necesitamos alinear los elementos con justify content es mejor usar flexbox. Siempre es necesario saber con cual es que nos quedaria menor codigo, a veces hay mas codigo con grid que con flexbox*/
 }
 .sobre-nosotros__imagen {
     padding-top: 1rem;
+}
+
+/** Cursos **/
+.curso {
+    /* 3 rem arriba y abajo */
+    padding: 3rem 0;
+    border-bottom: 1px solid var(--claro);
+}
+
+@media (min-width: 768px) {
+    .curso {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        column-gap: 2rem;
+    }
+}
+.curso:last-of-type {
+    border: none;
+    margin-bottom: 0;
+}
+.curso__label {
+    font-family: var(--fuenteHeading);
+    font-weight: bold;
+}
+.curso__info {
+    font-weight: normal;
+}
+.curso__label,
+.curso__info {
+    font-size: 2rem;
+}
+
+/**Pagina de entrada de blogs**/
+
+.entrada {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.entrada__imagen {
 }
