@@ -40,12 +40,19 @@
 
         <form class="formulario">
             <div class="campo">
-                <label for="nombre">Nombre: </label>
-                <input type="text" placeholder="Tu nombre" id="nombre">
+                <label class="campo__label" for="nombre">Nombre: </label>
+                <input class="campo__field" type="text" placeholder="Tu nombre" id="nombre">
             </div>
             <div class="campo">
-                <label for="email">Correo Electrónico: </label>
-                <input type="email" placeholder="Tu correo" id="email">
+                <label class="campo__label" for="email">Correo Electrónico: </label>
+                <input class="campo__field" type="email" placeholder="Tu correo" id="email">
+            </div>
+            <div class="campo">
+                <label class="campo__label" for="mensaje">Mensaje: </label>
+                <textarea class="campo__field" id="mensaje" cols="30" rows="10"></textarea>
+            </div>
+            <div class="campo">
+                <input class="campo__field" type="submit" placeholder="Enviar" id="enviar" class="boton boton--primario">
             </div>
         </form>
 
