@@ -160,6 +160,7 @@ img {
     text-transform: uppercase;
     font-weight: 700;
     margin-bottom: 2rem;
+    border: none;
 }
 @media (min-width: 768px) {
     .boton {
@@ -171,7 +172,9 @@ img {
     }
 }
 
-
+.boton:hover {
+    cursor: pointer;
+}
 .boton--primario {
     background-color: var(--negro);
 }
@@ -298,14 +301,23 @@ img {
     padding: 5rem;
 }
 .campo {
-    
     display: flex;
+    margin-bottom: 2rem;
 }
+
+/* No tienes factor de crecimiento, tampoco te hare mas pequeno, pero tu width sera de 9 rem y te quedaras fijo */
 .campo__label {
-
+    flex: 0 0 9rem;
+    text-align: right;
+    padding-right: 2rem;
+    
 }
-.campo__field {
 
+/* En este caso en el diseno el input toma todo el espacio disponible, porque si nos acordamos, por cada pixel que tome un elemento dentro de un elemento, el otro recibira el que se le especifique. En este ejemplo, toma todo el ancho debido a que el elemento anterior no tiene factor de crecimiento tomara el espacio disponible */
+.campo__field {
+    flex: 1;
+    border: 1px solid var(--claro);
+    
 }
 /* Contiene un modificador por ser mas grande que los demas */
 .campo__field--textarea {
