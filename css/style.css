@@ -74,8 +74,13 @@ img {
 }
 
 /** Header **/ 
-.header {
+.webp .header {
+    background-image: url(../img/banner.webp);
+}
+.no-webp .header {
     background-image: url(../img/banner.jpg);
+}
+.header {
     height: 45rem;
     /* La imagen de fondo se ajusta automáticamente para cubrir completamente el área del elemento, sin distorsionarla y manteniendo la relación de aspecto original. */
     background-size: cover;
